@@ -1,0 +1,84 @@
+
+% ocamlweb - A WEB-like tool for ocaml
+% Copyright (C) 1999 Jean-Christophe FILLIATRE
+% 
+% This software is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public
+% License version 2, as published by the Free Software Foundation.
+% 
+% This software is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% 
+% See the GNU General Public License version 2 for more details
+% (enclosed in the file GPL).
+
+% This is ocamlweb.hva, by Jean-Christophe Filliâtre
+% modified by Claude Marché and Patrick Loiseleur
+%
+% You can modify the following macros to customize the appearance
+% of the HTML document.
+
+\renewcommand{\medskip}{}
+
+% macro for typesetting comment start and end
+\newcommand{\ocwbc}{\quad\ensuremath{(\ast}}
+\newcommand{\ocwec}{\ensuremath{\ast)}}
+
+% macro for typesetting keywords
+\newcommand{\ocwkw}[1]{\textsf{#1}}
+
+% macro for typesetting base types (int, bool, string, etc.)
+\newcommand{\ocwbt}[1]{\textit{#1}}
+
+% macro for typesetting identifiers
+\newcommand{\ocwsymbolid}[1]{{#1}}
+\newcommand{\ocwlowerid}[1]{\textit{#1\/}}
+\newcommand{\ocwupperid}[1]{\textit{#1\/}}
+
+% newline with indentation of the next line as argument
+\newcommand{\ocwnl}[1]{\\\hspace{#1}\hspace{#1}}
+
+% visible space in a string
+\newcommand{\ocwvspace}{\hspace{1em}}
+
+% macro for typesetting the title of a module implementation
+\newcommand{\ocwmodule}[1]{\section*{Module #1}}
+
+% macro for typesetting the title of a module interface
+\newcommand{\ocwinterface}[1]{\section*{Interface for module #1}}
+
+% interface part of a module
+\newcommand{\ocwinterfacepart}{\subsection*{Interface}}
+
+% code part of a module
+\newcommand{\ocwcodepart}{\subsection*{Code}}
+
+% new section
+\newcounter{ocwcounter}
+\setcounter{ocwcounter}{0}
+\newcommand{\ocwsection}{%
+\refstepcounter{ocwcounter}%
+\bigskip\noindent{\bf\theocwcounter.}\hspace{1em}}
+%\newcommand{\ocwsection}[1]{%
+%  \label{code-section#1}\bigskip\noindent{\bf#1.}{\hspace{1em}}}
+
+% index
+%\newcommand{\ocwbeginindex}{\begin{itemize}}
+%\newcommand{\ocwendindex}{\end{itemize}}
+
+%\newindex{idents}{}{}{Index of indentifiers}
+%\newcommand{\ocwbeginindex}{\printindex[idents]}
+%\newcommand{\ocwendindex}{}
+\newcommand{\ocwbeginindex}{\begin{itemize}}
+\newcommand{\ocwendindex}{\end{itemize}}
+
+% index entry in WEB style
+\newcommand{\ocwwebindexentry}[3]{\item #1,\quad#2#3}
+
+% index entry in LaTeX style
+
+\newcommand{\ocwwebindexentry}[3]{\item #1,\quad#2#3}
+
+% Hevea does not understand \hrulefill ...
+\renewcommand{\hrulefill}{\rule{}}

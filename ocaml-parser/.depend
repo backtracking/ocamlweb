@@ -1,0 +1,33 @@
+lexer.cmi: parser.cmi 
+location.cmi: warnings.cmi 
+parse.cmi: parsetree.cmi 
+parser.cmi: parsetree.cmi 
+parsetree.cmi: asttypes.cmi location.cmi longident.cmi 
+pstream.cmi: parsetree.cmi 
+syntaxerr.cmi: location.cmi 
+lexer.cmo: misc.cmi parser.cmi lexer.cmi 
+lexer.cmx: misc.cmx parser.cmx lexer.cmi 
+linenum.cmo: misc.cmi linenum.cmi 
+linenum.cmx: misc.cmx linenum.cmi 
+location.cmo: linenum.cmi terminfo.cmi warnings.cmi location.cmi 
+location.cmx: linenum.cmx terminfo.cmx warnings.cmx location.cmi 
+longident.cmo: misc.cmi longident.cmi 
+longident.cmx: misc.cmx longident.cmi 
+misc.cmo: misc.cmi 
+misc.cmx: misc.cmi 
+parse.cmo: lexer.cmi location.cmi parser.cmi syntaxerr.cmi parse.cmi 
+parse.cmx: lexer.cmx location.cmx parser.cmx syntaxerr.cmx parse.cmi 
+parser.cmo: asttypes.cmi clflags.cmo location.cmi longident.cmi parsetree.cmi \
+    pstream.cmi syntaxerr.cmi parser.cmi 
+parser.cmx: asttypes.cmi clflags.cmx location.cmx longident.cmx parsetree.cmi \
+    pstream.cmx syntaxerr.cmx parser.cmi 
+pstream.cmo: asttypes.cmi location.cmi longident.cmi parsetree.cmi \
+    pstream.cmi 
+pstream.cmx: asttypes.cmi location.cmx longident.cmx parsetree.cmi \
+    pstream.cmi 
+syntaxerr.cmo: location.cmi syntaxerr.cmi 
+syntaxerr.cmx: location.cmx syntaxerr.cmi 
+terminfo.cmo: terminfo.cmi 
+terminfo.cmx: terminfo.cmi 
+warnings.cmo: warnings.cmi 
+warnings.cmx: warnings.cmi 
